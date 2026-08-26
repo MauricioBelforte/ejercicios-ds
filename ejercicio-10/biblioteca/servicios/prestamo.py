@@ -47,5 +47,8 @@ def realizar_devolucion(libro):
 
 def consultar_disponibilidad(libro):
     """Retorna el estado actual del libro de forma amigable."""
-    estado = "disponible" if libro.disponible else "prestado"
+    if libro.disponible:
+        estado = "disponible"
+    else:
+        estado = "prestado"
     return f"El libro '{libro.titulo}' se encuentra {estado}."
